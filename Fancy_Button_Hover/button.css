@@ -1,0 +1,27 @@
+/* Future improvement: Use javascript to prevent transitions on page load  */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(10, 10, 37);
+}
+  
+button {
+  color: orange;
+  z-index: 10;
+  background-color: rgb(10, 10, 37);
+  border: 2px solid orange;
+  font-size: 2.5em;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: color 0.1s, border-color 0.1s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  color: white;
+  box-shadow: 0 5px 5px -5px yellow;
+  border-color: yellow;
+  transform: translate(-50%, -55%);
+}
