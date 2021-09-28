@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="app.css">
+    <title>Score Keeper</title>
+</head>
+
+<body>
+    <div class="card card-alignment">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img src="media/pingpong.jpg" alt="Pingpong paddle">
+            </figure>
+        </div>
+        <header class="card-header">Ping Pong Score Keeper</header>
+        <div class="card-content">
+            <p id="score"><span>0</span> to <span>0</span></p>
+            <p>Use the buttons below to keep score</p>
+            <p id=playingTo>
+                Playing To
+                <input type="number" list="numList" value=7>
+            </p>
+        </div>
+        <div id="buttonGroup" class="card-footer">
+            <button id="plusP1" class="card-footer-item button is-primary">+1 Player One</button>
+            <button id="plusP2" class="card-footer-item button is-info">+1 Player Two</button>
+            <button id="reset" class="card-footer-item button is-danger">Reset</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
