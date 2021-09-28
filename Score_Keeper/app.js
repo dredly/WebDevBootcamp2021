@@ -9,11 +9,14 @@ const buttonGroup = document.querySelector('#buttonGroup');
 const score = document.querySelector('#score');
 const playingToDisplay = document.querySelector('#playingTo');
 
-const checkWin = function (playerScore) {
+const checkWin = function (playerScore, opponentScore) {
     if (playerScore === parseInt(playingTo)) {
-        p1Button.setAttribute('disabled', true);
-        p2Button.setAttribute('disabled', true);
-        return true;
+        //Implement the win by 2 rule
+        if (playerScore - opponentScore > 1) {
+            p1Button.setAttribute('disabled', true);
+            p2Button.setAttribute('disabled', true);
+            return true;
+        } else playingTo++;
     }
 }
 
@@ -23,14 +26,14 @@ playingToDisplay.addEventListener('input', function () {
 
 p1Button.addEventListener('click', () => {
     p1Score++
-    if (checkWin(p1Score)) {
+    if (checkWin(p1Score, p2Score)) {
         score.children[0].className = 'winText';
         score.children[1].className = 'loseText';
     }
 });
 p2Button.addEventListener('click', () => {
     p2Score++
-    if (checkWin(p2Score)) {
+    if (checkWin(p2Score, p1Score)) {
         score.children[1].className = 'winText';
         score.children[0].className = 'loseText';
     }
